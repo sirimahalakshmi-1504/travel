@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour & Travel Website HTML& CSS</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Work+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+</head>
+<body>
+    <style>
+        *{
+    border: none;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: 'Work Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+:root{
+    --bg-color: #fff;
+    --text-color: #221314;
+    --main-color: #5a7184;
+    --second-color: #6e54fa;
+    --big-font: 6rem;
+    --h2-font: 3rem;
+    --p-font: 1.1rem;
+}
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 18%;
+    transition: ease 0.40s;
+    background: transparent;
+}
+.logo{
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--bg-color);
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+}
+.navbar a{
+    color: var(--text-color);
+    font-size: var(--p-font);
+    padding: 15px 20px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: ease .30s;
+}
+.navbar a:hover{
+    background: lightcyan;
+    color: var(--text-color);
+    box-shadow: 5px 10px 30px rgb(170, 151, 151);
+    border-radius: 5px;
+}
+#menu-icon{
+    color: var(--text-color);
+    font-size: 35px;
+    z-index: 1001;
+    cursor: pointer;
+    display: none;
+}
+section{
+    padding: 80px 18%;
+}
+.home{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('./img1.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+}
+.home-text h1{
+    font-size: var(--big-font);
+    line-height: 1.2;
+    color: var(--bg-color);
+    font-family: 'Roboto Mono', monospace;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+.home-text p{
+    color: #ffffffbf;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 35px;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+.home-btn{
+    display: inline-block;
+    font-size: 15px;
+    padding: 15px 30px;
+    background: white;
+    color: var(--main-color);
+    border-radius: 4px;
+    transition: ease .40s;
+}
+.home-btn:hover{
+    background: var(--bg-color);
+    transform: scale(1.1);
+}
+header.sticky{
+    background: var(--bg-color);
+    padding: 10px 18%;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+.sticky .logo{
+    color: black;
+}
+
+.sticky.navbar a{
+    color: var(--main-color);
+}
+.text h2{
+    font-size: var(--h2-font);
+    line-height: 1.1;
+    color: var(--second-color);
+}
+.row-items{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 2rem;
+    align-items: center;
+    text-align: center;
+    margin-top: 5rem;
+}
+.container-box{
+    background: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid #f0eded;
+    padding: 40px 10px;
+    border-radius: 5px;
+    transition: all 1s ease 0s;
+    cursor: pointer;
+}
+.container-img img{
+    height: 100px;
+    width: 100px;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background: lightyellow;
+    box-shadow: 5px 10px 30px rgba(85, 85, 85 / 20%);
+    cursor: pointer;
+}
+.container-box h4{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.container-box p{
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--second-color);
+}
+.container-box:hover{
+    transform: translateY(-5px);
+    box-shadow: 5px 30px 50px rgba(55, 55, 55 / 15%);
+    border: 1px solid transparent;
+}
+.title{
+    text-align: center;
+}
+.title h2{
+    font-size : var(--h2-font);
+    line-height: 1.2;
+}
+.package-content{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 2rem;
+    align-items: center;
+    margin-top: 5rem;
+}
+.loc-img{
+    position: relative;
+    transition: all .3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    cursor: pointer;
+    will-change: filter;
+}
+.loc-img img{
+    width: 100%;
+    height: 500px;
+    border-radius: 5px;
+}
+.loc-img h3{
+    position: absolute;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: right;
+    color: var(--bg-color);
+    right: 36px;
+    top: 40px;
+}
+.desti-content{
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+.stars i{
+    color: var(--second-color);
+    font-size: 20px;
+}
+.location h4{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.location p{
+    font-size: 15px;
+    color: var(--second-color);
+}
+.loc-img:hover{
+    filter: brightness(100%) hue-rotate(30deg);
+    transform: scale(1.04);
+}
+.destination-content{
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(340px, auto)); */
+    grid-template-columns: auto auto auto;
+    grid-gap: 2rem;
+    align-items: center;
+    margin-top: 5rem;
+}
+.desti-location{
+    position: relative;
+}
+.desti-location img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    filter: brightness(100%);
+    transition: all .3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    will-change: filter;
+}
+.desti-location h5{
+    position: absolute;
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--bg-color);
+    left: 15px;
+    bottom: 60px;
+}
+.desti-location p{
+    position: absolute;
+    font-size: 18px;
+    color: var(--bg-color);
+    left: 15px;
+    bottom: 30px;
+    letter-spacing: 2px;
+}
+.desti-location img:hover{
+    filter: brightness(100%) hue-rotate(30deg);
+    transform: scale(1.04);
+    cursor: pointer;
+}
+.newsletter{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: 3rem;
+}
+.news-text h2{
+    font-size: var(--h2-font);
+    margin-bottom: 5px;
+}
+.news-text p{
+    font-size: var(--p-font);
+    color: var(--second-color);
+    line-height: 30px;
+}
+.newsletter form{
+    max-width: 100%;
+    width: 450px;
+    position: relative;   
+}
+.newsletter form input:first-child{
+    display: inline-block;
+    width: 100%;
+    padding: 20px 150px 20px 30px;
+    box-shadow: 5px 30px 50px rgba(55, 55, 55 / 15%);
+    outline: none;
+    border: none;   
+    border-radius: 15px;
+    background: rgb(243, 239, 239);
+}
+.newsletter form input:last-child{
+    display: inline-block;
+    position: absolute;
+    outline: none;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 15px;   
+    background: var(--second-color);
+    color: var(--bg-color);
+    top: 6px;
+    right: 6px;
+    cursor: pointer;
+}
+#contact{
+    background: var(--second-color);
+}
+.main{
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer{
+    padding: 20px 0;
+}
+.list{
+    width: 25%;
+}
+.list h4{
+    font-size: 21px;
+    color: var(--bg-color);
+    margin-bottom: 30px;
+    position: relative;
+}
+.list h4::before {
+    content: " ";
+    position: relative;
+    height: 2px;
+    width: 60px;
+    left: 0;
+    bottom: -10px;
+    background: var(--bg-color);
+}
+.list ul li:not(:last-child){
+    margin-bottom: 15px;
+}
+.list ul li a{
+    color: #ffffffbf;
+    font-size: var(--p-font);
+    display: block;
+    transition: .3s;
+}
+.list ul li a:hover{
+    color: var(--bg-color);
+    transform: translateX(14px);
+    cursor: pointer;
+}
+.list .social a{
+    height: 40px;
+    width: 40px;
+    background: var(--bg-color);
+    color: var(--main-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    border-radius: 15px;
+    transition: .3s;
+    margin-right: 10px;
+}
+.list .social a:hover{
+    transform: scale(1.2);
+}
+.end-text{
+    text-align: center;
+    padding-top: 90px;
+}
+.end-text p{
+    color: var(--bg-color);
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 1000px) {
+    header{
+        padding: 15px 3%;
+        transition: .2s;
+    }
+    header.sticky{
+        padding: 15px 3%;
+        transition: .2s;
+    }
+    section{
+        padding: 80px 3%;
+        transition: .2s ;
+    }
+    :root{
+        --big-font: 3rem;
+        --h2-font: 2rem;
+        --p-font: 1rem;
+        transition: .2s;
+    }
+}
+
+@media (max-width: 700px){
+    #menu-icon{
+        display: block;
+    }
+    .sticky #menu-icon{
+        color: var(--text-color);
+    }
+    .home{
+        height: 50vh;
+    }
+    .navbar{
+        position: relative;
+        top: 0;
+        right: -100%;
+        width: 270px;
+        height: 80vh;
+        background: #1067cc;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 30px;
+        transition: .3s all;
+    }
+    .navbar a{
+        display: block;
+        margin: 1.3rem 0;
+    }
+    .sticky .navbar a{
+        color: var(--bg-color);
+    }
+    .navbar a:hover{
+        color: var(--text-color);
+    }
+    .open{
+        right: 0;
+    }
+    .list{
+        width: 50%;
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 500px) {
+    .list{
+        width: 100%;
+    }
+    .newsletter form{
+        width: 350px;
+    }
+    :root{
+        --big-font: 2.5rem;
+        --h2-font: 1.5rem;
+        transition: .2s;
+    }
+    .text{
+        text-align: center;
+    }
+    .home{
+        height: 85vh;
+        transition:.2s
+    }
+
+}
+    </style>
+        <!-- header -->
+        <header>
+            <a href="#" class="logo">Travel</a>
+            <div class="bx bx-menu" id="menu-icon"></div>
+
+            <ul class="navbar">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#package">Package</a></li>
+                <li><a href="#destination">Destination</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </header>
+
+        <!-- home section -->
+        <section class="home" id="home">
+            <div class="home-text">
+                <h1>Fuel Mind <br> Travel</h1>
+                <p>Enthusiatically extend extensive customer service before <br> best breed convergence completely.</p>
+                <a href="#" class="home-btn">Let's go now.</a>
+            </div>
+        </section>
+
+        <!-- container -->
+        <section class="container">
+            <div class="text">
+                <h2>Start Your Vacation <br> with Lots of Services!</h2>
+            </div>
+            <div class="row-items">
+                <div class="container-box">
+                    <div class="container-img">
+                        <img src="./img2.jpeg" alt="">
+                    </div>
+                    <h4>Ship Cruises</h4>
+                    <p>150 Properties</p>
+                </div>
+
+                <div class="container-box">
+                    <div class="container-img">
+                        <img src="./img5.jpeg" alt="">
+                    </div>
+                    <h4>Food Tours</h4>
+                    <p>150 Properties</p>
+                </div>
+
+                <div class="container-box">
+                    <div class="container-img">
+                        <img src="./img4.jpeg" alt="">
+                    </div>
+                    <h4>Summer Rest</h4>
+                    <p>150 Properties</p>
+                </div>
+
+                <div class="container-box">
+                    <div class="container-img"> 
+                        <img src="./img3.jpeg" alt="">
+                    </div>
+                    <h4>Mountain Tours</h4>
+                    <p>150 Properties</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Package Section -->
+        <section class="package" id="package">
+            <div class="title">
+                <h2>Our Upcoming <br> Tour Package</h2>
+            </div>
+            <div class="package-content">
+                <div class="box">
+                    <div class="loc-img">
+                        <img src="./img10.jpeg" alt="">
+                        <h3>$499</h3>
+                    </div>
+
+                    <div class="desti-content">
+                        <div class="location">
+                            <h4>Tokyo</h4>
+                            <p>5h - 6h</p>
+                        </div>
+                        <div class="stars">
+                            <a href="#"><i class='bx bxs-star' ></i></a>
+                            <a href="#"><i class='bx bxs-star' ></i></a>
+                            <a href="#"><i class='bx bxs-star' ></i></a>
+                            <a href="#"><i class='bx bxs-star' ></i></a>
+                            <a href="#"><i class='bx bxs-star' ></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="loc-img">
+                        <img src="./img11.jpeg" height="540px" width="375px" alt="">
+                        <h3>$599</h3>
+                    </div>
+                    
+                    <div class="desti-content">
+                        <div class="location">
+                            <h4>France</h4>
+                            <p>5h - 6h</p>
+                        </div>
+                        <div class="stars">
+                            <a href="#"><i class='bx bxs-star' ></i></a>
+                            <a href="#"><i class='bx bxs-star' ></i></a>
+                            <a href="#"><i class='bx bxs-star' ></i></a>
+                            <a href="#"><i class='bx bxs-star' ></i></a>
+                            <a href="#"><i class='bx bxs-star' ></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="loc-img">
+                        <img src="./img12.jpeg" height="540px" width="375px" alt="">
+                        <h3>$699</h3>
+                    </div>
+                    
+                    <div class="desti-content">
+                        <div class="location">
+                            <h4>New York</h4>
+                            <p>5h - 6h</p>
+                        </div>
+                        <div class="stars">
+                            <a href="#"><i class='bx bxs-star' ></i></a>
+                            <a href="#"><i class='bx bxs-star' ></i></a>
+                            <a href="#"><i class='bx bxs-star' ></i></a>
+                            <a href="#"><i class='bx bxs-star' ></i></a>
+                            <a href="#"><i class='bx bxs-star' ></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- destination section -->
+        <section class="destination" id="destination">
+            <div class="title">
+                <h2>Our Most Popular <br> Destination!</h2>
+            </div>
+
+            <div class="destination-content">
+                <div class="desti-location">
+                    <img src="./img15.jpeg" alt="">
+                    <h5>Milan Cathedral</h5>
+                    <p>MILANO</p>
+                </div>
+                <div class="desti-location">
+                    <img src="./img14.jpeg" alt="">
+                    <h5>Golden Gate Bridge</h5>
+                    <p>SAN FRANCISCO</p>
+                </div>
+                <div class="desti-location">
+                    <img src="./img8.jpeg" alt="">
+                    <h5>Gizza Pyramid</h5>
+                    <p>EGYPT</p>
+                </div>
+                <div class="desti-location">
+                    <img src="./img7.jpeg" alt="">
+                    <h5>Mount Matterhorn</h5>
+                    <p>SWITZERLAND</p>
+                </div><div class="desti-location">
+                    <img src="./img6.jpeg" alt="">
+                    <h5>Saint Basil's Cathedral</h5>
+                    <p>MOSCOW</p>
+                </div><div class="desti-location">
+                    <img src="./img9.jpeg" alt="">
+                    <h5>Supertree Grove</h5>
+                    <p>SINGAPORE</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <div class="news-text">
+                <h2>Newsletter</h2>
+                <p>Subscribe For more HTML, CSS and <br> Coding Tutorials</p>
+            </div>
+
+            <div class="send">
+                <form>
+                    <input type="email" name="" id="" placeholder="Write Your Email" required>
+                    <input type="submit" value="Submit">    
+                </form>
+            </div>
+        </section>
+
+        <!-- footer -->
+        <section id="contact">
+            <div class="footer">
+                <div class="main">
+                    <div class="list">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Help</a></li>
+                            <li><a href="#">Tour</a></li>  
+                        </ul>
+                    </div>
+
+                    <div class="list">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Help</a></li>
+                            <li><a href="#">Tour</a></li>  
+                        </ul>
+                    </div>
+
+                    <div class="list">
+                        <h4>Contact Info</h4>
+                        <ul>
+                            <li><a href="#">98 West 21st Street</a></li>
+                            <li><a href="#">New York NY 10016</a></li>
+                            <li><a href="#">+1(123)-456-7890</a></li>
+                            <li><a href="#">info@mydomain.com</a></li>
+                            <li><a href="#">+1(123)-456-7890</a></li>  
+                        </ul>
+                    </div>
+
+                    <div class="list">
+                        <h4>Connect</h4>
+                        <div class="social">
+                            <a href="#"><i class="bx bxl-facebook"></i></a>
+                            <a href="#"><i class="bx bxl-instagram-alt"></i></a>
+                            <a href="#"><i class="bx bxl-twitter"></i></a>
+                            <a href="#"><i class="bx bxl-linkedin"></i></a> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="end-text">
+                <p>Copyright &copy2023 All rights Reserved | Made with by Arjun</p>
+            </div>
+        </section>
+                <!-- link to js -->
+           <script type="text/javascript" src="./script.js"></script>
+ 
+
+</body>
+</html>
